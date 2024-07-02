@@ -1,33 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #0095F5 transparent;
+  scroll-behavior: smooth;
+}
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width of the scrollbar */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar-thumb {
+  background: #0095F5;
+  border-radius: 10px; /* Apply border-radius */
+  border: 3px solid transparent; /* Add a border to visually separate the thumb */
+  background-clip: content-box; /* Ensure the background doesn't extend into the border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0095F5; /* Change color on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Adjust the track color */
+  border-radius: 10px; /* Optional: apply border-radius to the track as well */
+}
+.scroll_bar-none::-webkit-scrollbar {
+  display: none;
+}
+*:disabled {
+  cursor: not-allowed;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth !important;
+}
+body.modal-open {
+  overflow: hidden; /* see "modal-open" in Modal.tsx */
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+@layer components {
+  .main-container {
+    @apply w-full lg:max-w-[1360px] 2xl:max-w-[1536px] mx-auto px-4 md:px-6 xl:px-12 2xl:px-6;
+  }
+  .common-transition {
+    @apply transition-all ease-in-out duration-300 !important;
+  }
+  .top-spacing {
+    @apply pt-12 md:pt-16 lg:pt-20 2xl:pt-24;
+  }
+  .bottom-spacing {
+    @apply pb-12 md:pb-16 lg:pb-20 2xl:pb-24;
+  }
+  .title {
+    @apply text-2xl md:text-3xl lg:text-4xl  lg:leading-[3rem]  text-gray-800 capitalize tracking-wide font-bold;
+  }
+  .sub-title {
+    @apply sm:text-lg md:text-xl lg:text-3xl font-bold capitalize tracking-wide text-gray-800;
+  }
+ 
+
+  .carousel-item {
+    margin: 0 0 0 10px;
+  }
+  .footerGradient {
+    background: linear-gradient(to top, #17880e 20%, #17880e 35%, #ffffff 45%);
+  }
+}
+.swal2-container {
+  z-index: 10000 !important;
+}
+.hover-underline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  /* color: #1bb0b3; */
+  background-color: #5b50a1;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline:hover:after {
+  transform: scaleX(1);
+
+  transform-origin: bottom left;
+}
+.delay-animation {
+  @apply !transition-all !ease-in-out !duration-500;
+}
+/*//? React-Slick Styling */
+.feature-slick-slider .slick-track {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+}
+.category-slick-slider .slick-track {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.category-slick-slider .slick-prev {
+  left: -5px;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.category-slick-slider .slick-next {
+  right: -5px;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.category-slick-slider .slick-prev:before {
+  content: url("/kishan/back.png") !important;
+  color: #fff !important;
+  margin-right: 0.15rem !important;
+  font-family: "poppins", sans-serif !important;
+}
+
+.category-slick-slider .slick-next:before {
+  content: url("/kishan/next.png") !important;
+  color: #fff !important;
+  margin-top: 0.15rem !important;
+  margin-left: 0.15rem !important;
+  font-family: "poppins", sans-serif !important;
+}
+
+.category-slick-slider .slick-next,
+.category-slick-slider .slick-prev {
+  background: #ec1e79 !important;
+  padding: 1.25rem;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+
+.image-slider .slick-next,
+.image-slider .slick-prev {
+  background: #e5e4e4 !important;
+  padding: 1.1rem;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.image-slider .slick-next:hover,
+.image-slider .slick-prev:hover {
+  background: #9f9d9d !important;
+  padding: 1.1rem;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.image-slider .slick-prev {
+  left: -13px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+.image-slider .slick-next {
+  right: -10px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.imgSlider .slick-next,
+.imgSlider .slick-prev {
+  background: #4f0000 !important;
+}
+.imgSlider .slick-next {
+  margin-right: -10px;
+}
+.imgSlider .slick-prev {
+  margin-left: -30px;
+}
+.animate-collapse {
+  transition: grid-template-rows 500ms;
+}
+
+
+.image-container {
+  position: relative;
+  width: 400px; /* Adjust the width as needed */
+  height: 500px; /* Adjust the height as needed */
+}
+
+.image-container:hover .magnify-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.hover-slide-border {
+  position: relative;
+}
+
+.hover-slide-border::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0095F5; /* Adjust the color of the border as needed */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add left transition */
+}
+
+.hover-slide-border:hover::before {
+  width: 100%;
+  left: 0; /* Adjust the left position to start from the left */
+}
+.slide {
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slick-current .slide {
+  opacity: 1;
+}
+.floating-y-animation {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0% {
+    filter: drop-shadow(0 5px 15px rgba(250, 250, 250, 0.6));
+    transform: translateY(0px);
+  }
+  50% {
+    filter: drop-shadow(0 25px 15px rgba(250, 250, 250, 0.2));
+    transform: translateY(-20px);
+  }
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(250, 250, 250, 0.6));
+    transform: translateY(0px);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.floating-x-animation {
+  animation: float-x 6s ease-in-out infinite;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+/* N-progress bar animation */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background-image: linear-gradient(to right, #48C9B0, #FF5733);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #48C9B0, 0 0 5px #FF5733;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #48C9B0;
+  border-left-color: #FF5733;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
