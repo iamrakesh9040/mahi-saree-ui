@@ -100,7 +100,7 @@ const Navbar = () => {
             href="/"
             className=" font-medium text-secondary tracking-wider cursor-pointer text-2xl border-b border-primary font-sans"
           >
-            Mahi-Saree
+            Mahi-Sareekngnxng
           </Link>
           <img
             src="/"
