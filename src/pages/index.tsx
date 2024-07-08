@@ -1,41 +1,18 @@
-import { LogoSlider } from "@/components/common";
-import ClientTestimonial from "@/components/common/ClientTestimonial";
-import MobileApp from "@/components/common/MobileApp";
-import {
-  Coupons,
-  HeroSection,
-  NewArrival,
-  ProductImage,
-  SellingProduct,
-} from "@/components/home";
-import { useSwr } from "@/hooks";
-import { PublicLayout } from "@/layouts";
+import { BestSeller, HeroSection, NewArrival, PopularProducts, Testimonial, WatchBuy } from '@/Components/home'
+import { PublicLayout } from '@/layouts'
+import React from 'react'
 
-export default function Home() {
-  const {
-    data: imageData,
-    isValidating,
-    mutate,
-  } = useSwr(`product/get-all-images`);
+const Home = () => {
   return (
-    <PublicLayout
-      title="Mahi-Saree"
-      ogImage=""
-    >
+    <PublicLayout>
       <HeroSection />
-      <ProductImage />
-      <LogoSlider
-        title="Explore Our All Collections"
-        Arr={imageData}
-        mutate={mutate}
-        isValidating={isValidating}
-      />
+      <PopularProducts />
+      <WatchBuy />
       <NewArrival />
-      <Coupons />
-      <SellingProduct />
-      {/* <Product /> */}
-      <MobileApp />
-      <ClientTestimonial />
+      <BestSeller />
+      <Testimonial />
     </PublicLayout>
-  );
+  )
 }
+
+export default Home

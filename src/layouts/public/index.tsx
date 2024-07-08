@@ -1,8 +1,8 @@
 // import { useAppContext } from "contexts";
 import Head from "next/head";
+import { AccessProtected } from "@/hooks";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { AccessProtected } from "@/hooks";
 
 type Props = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ type Props = {
 };
 const PublicLayout = ({
   children = <></>,
-  title = "Mahi-Saree",
+  title = "Mahi-Saree-shop",
   description,
   ogImage,
 }: Props) => {
