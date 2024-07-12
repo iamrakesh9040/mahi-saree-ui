@@ -5,6 +5,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiSearch } from 'react-icons/fi';
 import { HiMenuAlt1, HiOutlineShoppingCart } from "react-icons/hi";
 import MobileDrawer from './MobileDrawer';
+import { useRouter } from 'next/router';
 interface MENUITEMS {
     name: string,
     route: string,
@@ -12,6 +13,7 @@ interface MENUITEMS {
 }
 const Navbar = () => {
     const [open, setOpen] = useState(false)
+    const router = useRouter()
     const menuItems: MENUITEMS[] = [
         {
             name: "New Arrivals",
@@ -31,17 +33,17 @@ const Navbar = () => {
         {
             name: "Track Order",
             route: "#",
-            isMenuList: false,
+            isMenuList: true,
         },
         {
             name: "About Us",
             route: "#",
-            isMenuList: false,
+            isMenuList: true,
         },
     ]
     return (
         <>
-            <nav className='bg-white w-full   flex  gap-1 items-center sticky top-0 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] z-[999] '>
+            <nav className='bg-white w-full   flex  gap-1 items-center sticky top-0 border-b-[2px] border-gradient z-[999] '>
                 <MobileDrawer open={open} close={() => setOpen(false)} />
 
                 <div className='main-container w-full flex items-center justify-between py-2'>
@@ -66,7 +68,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex items-center gap-4'>
                         <FiSearch className='text-2xl text-gray-950 cursor-pointer' />
-                        <BiUser className='text-2xl text-gray-950 cursor-pointer lg:block hidden' />
+                        <BiUser onClick={() => router?.push(`/sign-in`)} className='text-2xl text-gray-950 cursor-pointer lg:block hidden' />
                         <MdOutlineShoppingCart className='text-2xl text-gray-950 cursor-pointer' />
                         <p
                             onClick={() => setOpen(true)}

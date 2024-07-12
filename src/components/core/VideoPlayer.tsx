@@ -30,7 +30,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, isVisible }) => {
         <div className={`relative w-full h-full group`}>
             <video
                 ref={videoRef}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg "
             >
                 <source src={src} type="video/mp4" />
             </video>

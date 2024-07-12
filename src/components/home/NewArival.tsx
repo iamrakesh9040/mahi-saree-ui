@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewArival = () => {
     return (
-        <section className='w-full main-container py-5 flex flex-col gap-20'>
+        <section className='w-full main-container py-5 flex flex-col gap-20 '>
             <div className='w-full h-fit border-2 border-gray-800 flex lg:flex-row flex-col  items-center'>
                 <div className='w-full lg:w-[65%] lg:h-[25rem]  h-fit items-center grid lg:grid-cols-3 grid-cols-1 gap-10 py-5 px-16  '>
                     <img src="/img2.jpg" className=' w-full h-fit lg:h-[18rem] object-cover lg:-mt-10' alt="" />

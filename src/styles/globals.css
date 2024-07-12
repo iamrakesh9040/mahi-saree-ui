@@ -265,3 +265,6 @@ dialog::backdrop {
 .floating-x-animation {
   animation: float-x 6s ease-in-out infinite;
 }
+.border-gradient {
+  border-image: linear-gradient(to right, rgba(239, 68, 68, 0.01), rgba(239, 68, 68, 0.75), rgba(239, 68, 68, 0.01)) 1;
+}

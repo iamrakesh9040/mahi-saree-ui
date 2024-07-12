@@ -53,7 +53,7 @@ const Footer = () => {
         }
     ]
     return (
-        <footer className='w-full flex flex-col gap-5 border-t   border-primary main-container p-10'>
+        <footer className='w-full flex flex-col gap-5 border-t-[1px] border-gradient main-container p-10'>
             <div className='w-full grid lg:grid-cols-4 grid-cols-1 lg:gap-0 gap-5 pt-5'>
                 {
                     footerData?.map((item: FOOTER, index: number) => (
@@ -92,7 +92,7 @@ const Footer = () => {
             </div>
             <hr />
             <div className=' w-full flex lg:flex-row flex-col items-center justify-between pt-10'>
-                <div className=' flex items-center gap-10 lg:block hidden'>
+                <div className='  items-center gap-10 lg:flex hidden'>
                     <p className=' text-sm text-gray-900 tracking-wide cursor-pointer'>About us</p>
                     <p className=' text-sm text-gray-900 tracking-wide cursor-pointer'>Contact</p>
                     <p className=' text-sm text-gray-900 tracking-wide cursor-pointer'>Privacy policy</p>

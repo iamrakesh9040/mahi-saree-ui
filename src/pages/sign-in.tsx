@@ -7,7 +7,7 @@ const SignIn = () => {
     return (
         <PublicLayout title='Mah-Saree | Sign In'>
             <div className=' w-full h-full flex items-center justify-center py-5 lg:px-0 px-6'>
-                <div className='lg:w-[40%] w-full h-fit rounded-2xl bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] py-8 px-10 flex items-center flex-col gap-6'>
+                <div className='lg:w-[35%] w-full h-fit rounded-2xl bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] py-8 px-10 flex items-center flex-col gap-6'>
                     <img src="/logo.jpg" className='w-20 h-20 object-cover rounded-md' alt="" />
                     <p className=' lg:text-3xl text-xl font-medium capitalize  pt-4'>Welcome back, Trailblazer!</p>
                     <p className=' font-normals text-center'>We are excited to have your back. Log in now and access

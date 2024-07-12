@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsArrowLeft } from 'react-icons/bs'
+import { ProductCard } from '../core'
 interface PRODUCT {
     image: string,
     title: string,
@@ -47,11 +48,7 @@ const BestSeller = () => {
             <div className='w-full grid lg:grid-cols-4 grid-cols-2 gap-10 items-start'>
                 {
                     Product?.map((item: PRODUCT, index: number) => (
-                        <div className='w-full h-fit flex flex-col gap-2'>
-                            <img src={item?.image} className='w-full lg:h-[25rem] h-[10rem] object-cover' alt="" />
-                            <p className=' font-light text-gray-500 lg:text-base text-xs'>{item?.title}</p>
-                            <p className=' font-medium text-gray-900 lg:text-base text-sm'>₹{item?.price}</p>
-                        </div>
+                        <ProductCard item={item} key={index} />
                     ))
                 }
             </div>

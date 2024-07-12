@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/nprogress.css";
 import "react-quill/dist/quill.snow.css";
 import type { AppProps } from "next/app";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,1 +1,5 @@
 export {default as VideoPlayer} from './VideoPlayer'
+export {default as ProductSections} from './ProductSection'
+export {default as ProductSectionsLeftSide} from './ProductSectionLeftSide'
+export {default as ProductCard} from './ProductCard'
+export {default as PriceRange} from './PriceRange'

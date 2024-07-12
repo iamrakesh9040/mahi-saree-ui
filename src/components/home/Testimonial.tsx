@@ -122,7 +122,7 @@ const ClientTestimonial = () => {
         navigationRef?.current?.slickGoTo(index);
     };
     return (
-        <section className=" main-container top-spacing w-full">
+        <section className=" main-container w-full">
             <div className="w-full h-fit relative flex flex-col gap-5 ">
                 <div className='w-full flex items-center justify-center gap-10 py-5'>
                     <span className='w-full h-[0.05rem] bg-gray-900 relative'>

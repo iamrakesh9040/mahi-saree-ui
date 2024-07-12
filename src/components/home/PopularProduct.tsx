@@ -31,12 +31,12 @@ const PopularProduct = () => {
                     <p className='w-2 h-2 bg-gray-900 animate-spin absolute -top-1 right-0'></p>
                 </span>
             </div>
-            <div className='w-full h-[30rem] overflow-hidden grid lg:grid-cols-4 grid-cols-2 items-center gap-6 '>
+            <div className='w-full h-fit overflow-hidden grid lg:grid-cols-4 grid-cols-2 items-center gap-6 '>
                 {
                     images?.map((item: any, index: number) => (
-                        <div className='w-full h-full relative'>
-                            <p className=' absolute bottom-10 left-1/2 -translate-x-1/2 text-xl text-white uppercase w-full text-center'>{item?.title}</p>
-                            <img src={item?.image} className='w-full h-full object-cover' alt="" />
+                        <div className='w-full h-[30rem] relative group  overflow-hidden'>
+                            <p className=' absolute lg:bottom-10 bottom-5 left-1/2 -translate-x-1/2 z-10 lg:text-xl text-sm text-white uppercase w-full text-center'>{item?.title}</p>
+                            <img src={item?.image} className='w-full h-full object-cover z-0 group-hover:scale-125 duration-300' alt="" />
                         </div>
                     ))
                 }
